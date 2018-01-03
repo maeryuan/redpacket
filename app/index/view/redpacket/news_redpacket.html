@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.最新资讯，
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+          <h2>红包列表</h2><h3><a href='addRedpacketModel.php'>添加红包</a></h3>
+        <table boder="1"   cellpadding="0" cellspacing="0" width="100%" bgcolor="#ABCDEF">
+            <tr>
+                <td>编号</td>
+                <td>红包名</td>
+                <td>红包类型</td>
+                <td>利率值</td>
+                <td>现金红包的值</td>
+                <td>有效期</td>
+                <td>最小使用金额</td>
+                <td>最大使用金额</td>
+                <td>允许的最小期限</td>
+                <td>允许的最大使用期限</td>
+                <td>创建时间</td>
+                <td>修改时间</td>
+                
+                <td>操作</td>
+            </tr>
+            <?php   $rows = getAllRedpacket_Model($conn); $i=1;if(isset($rows)){foreach($rows as $row): ?>
+            <tr>  <td><?php echo $i;$i++;?></td>
+                <td><?php echo $row['rd_name'];?></td>
+                <td><?php echo $row['rd_type'];?></td>
+                <td><?php echo $row['rate'];?></td>
+                <td><?php echo $row['cash'];?></td>
+                <td><?php echo $row['valid_time'];?></td>
+                <td><?php echo $row['invest_min_amount'];?></td>
+                <td><?php echo $row['invest_max_amount'];?></td>
+                <td><?php echo $row['limit_min_date'];?></td>
+                <td><?php echo $row['limit_max_date'];?></td>
+                <td><?php echo $row['create_time'];?></td>
+                <td><?php echo $row['update_time'];?></td>
+                
+                <td><a href="updateRedpacketModel.php?act=update&redpacket_model_id=<?php echo $row['redpacket_model_id'];?>">更新</a>&nbsp;&nbsp;<a href="../controller/c_RedpacketModel.php?act=del&redpacket_model_id=<?php echo $row['redpacket_model_id'];?>">删除</a>
+                    <a href="countRedpacket.php?act=select&redpacket_model_id=<?php echo $row['redpacket_model_id'];?>">发放情况</a> </td>
+            </tr>
+            <?php endforeach;}?>
+        </table>
+    </body>
+</html>

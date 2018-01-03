@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body><h1>这里是view\redpacket\index.html</h1>
+        <div>投资信息</div>
+    
+        <table> 
+            <tr>
+                <td>红包名</td><td>红包类型</td> <td>利率</td> <td>金额</td><td>操作</td>
+            </tr>
+            {volist name="list" id="data"}
+            <tr><td>{$data.rd_name}</td>
+                <td>{$data.rd_type}</td>
+                <td>{$data.rate}</td>
+                <td>{$data.cash}</td>
+                <td><a href="../Invest/index?rd_name={$data.rd_name}&redpacket_model_id={$data.redpacket_model_id}">投资详情</a></td>
+            </tr>
+
+            {/volist}</table><a href="../Home/home">返回主页</a>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>投资操作页面</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>投资页面</h1><p>用户：{$Think.session.real_name}</p>
+        <form action="Invest/invest" methd="post">
+    <center>  <table border="0" cellpading="0" cellspacing="0" width="40%"bgcolor="red" >
+            <center><h2>红包投资</h2></center>
+            {volist name="list" id="data"}
+
+            <tr><th> {$data.rd_name}</th>
+            </tr>
+            <tr><td>红包类型：{$data.rd_type}</td>
+            </tr>
+            <tr><td>金额：{$data.rate}
+                </td>
+                <td>利率：{$data.cash}</td>
+            </tr>
+            <tr><td>有效期： {$data.valid_time}</td>
+            </tr>
+            <tr><td>投资金额：{$data.invest_min_amount}
+                   -- {$data.invest_max_amount}</td>
+             <!--   <td><input type="text" name="cash"/></td>-->
+            </tr>
+            <tr><td>使用期限：{$data.limit_min_date}
+                   --{$data.limit_max_date}</td>
+            </tr>
+            <tr><td>使用次数：{$data.allow_num}
+                    --{$data.limit_num}</td>
+            </tr>
+            
+            {/volist}
+        
+        </table><input type="submit" value="确认投资"><a href="../Redpacket/index">取消投资</a>
+    </center></form>
+</body>
+</html>
