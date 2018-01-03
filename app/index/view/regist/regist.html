@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.注册
+-->
+<html>
+    <head>
+        <title>注册</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>文件目录app\index\view\regist\regist.html</h1>
+        <form method="post" action="../controller/c_Register.php">
+            <table>
+                <tr>
+                    <td align="reght">用户帐号：</td>
+                    <td><input type="text" name="real_name" placeholder="请输入合法用户名...">
+                        用户名首字母以字母开始 </td>
+                </tr>
+                <tr>
+                    <td align="reght">设置密码：</td>
+                    <td> <input type="password" name="pwd" placeholder="请输入密码...">密码长度6~10</td>
+                </tr>
+                <tr>
+                    <td align="reght">密码确认：</td>
+                    <td><input type="password" name="repwd" placeholder="请再次输入密码...">两次密码一致</td>
+                </tr>
+                <tr>
+                    <td align="reght">手机号码：</td>
+                    <td><input type="text" name="mobile"placeholder="请输入手机号"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="注册" name="sub"></td>
+                </tr>
+                </table>
+    </body>
+</html>
