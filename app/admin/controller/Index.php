@@ -21,6 +21,6 @@ class Index extends Controller {
         return $this->fetch('menu');
     }
     public function test(){
-        return $this->fetch('test2');
+        return $this->fetch('topp');
     }
 }

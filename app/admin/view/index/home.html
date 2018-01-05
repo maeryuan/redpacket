@@ -1,19 +1,63 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/admin/css/zuolan.css">
+        <link rel="stylesheet" href="/static/admin/css/tou.css">
     </head>
     <body>
-        <div><h1><p>{$Think.session.username}</p></h1></div>
-        <div><a href="../Redpacketedit/index">红包模板管理</a></div>
-        <div><a>红包发放管理</a></div>
-        <div><a>红包统计</a></div>
+        <div class="tou">
+            <h5>{$Think.session.username}</h5>            
+            <a href="#">退出登录</a>
+        </div>      
+        <div class="page">
+            <div class="nav">
+                <div class="nav-li">
+                    <div class="tit">红包模板管理</div>
+                    <ul>
+                        <li>
+                           编辑红包模板
+                            <div class="list-3">
+                                <div class="list-3Dom"><a href="../Redpacketedit/index">查看所有模板</a></div>
+                                <div class="list-3Dom">三级栏目</div>                                
+                                <div class="list-3Dom">三级栏目</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                           添加红包模板
+                           <div class="list-3">
+                                <div class="list-3Dom">添加现金红包</div>
+                                <div class="list-3Dom">添加利率红包</div>
+                             </div>
+                        </li>
+                    </ul>                  
+                </div>
+                <div class="nav-li">
+                    <div class="tit">红包发放管理</div>
+                    <ul>
+                        <li>
+                            发放红包
+                             <div class="list-3">
+                                <div class="list-3Dom">发放现金红包</div>
+                                <div class="list-3Dom">发放利率红包</div>
+                             </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            查看发放的红包
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-li"> 红包统计 </div>
+                <div class="nav-li"> 活动管理 </div>
+                <div class="nav-li"> 主标题 </div>
+            </div>
+        </div>
     </body>
 </html>
