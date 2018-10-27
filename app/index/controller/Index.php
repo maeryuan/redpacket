@@ -6,7 +6,7 @@ namespace app\index\controller;
 
 use think\Controller;
 use app\index\model\User;
-
+use think\cache\driver\Redis;
 class Index extends Controller {
 
     public function index() {
@@ -14,5 +14,14 @@ class Index extends Controller {
        
         return $this->fetch();
     }
-
+    
+    public function toredis(){
+        $redis = new Redis();
+        $str = 'aaaaaaa';
+        $redis->set('name',$str,3600);
+        echo $redis->get('name');
+    }
+    public function showInfo(){
+        phpinfo();
+    }
 }

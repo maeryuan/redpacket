@@ -52,7 +52,7 @@ class Redpacketedit extends Controller {
     public function updateInfo() {
         $redpacket_model_id = input('param.redpacket_model_id');               
         $data = input('post.');        
-        $res = RedpacketModel::where("redpacket_model_id", "=", "$redpacket_model_id")
+        $res = RedpacketModel::where("redpacket_model_id","$redpacket_model_id")
                 ->update($data);
         
         if ($res == 1) {
@@ -66,7 +66,7 @@ class Redpacketedit extends Controller {
 
     public function delRedpacket() {
         $redpacket_model_id = input('param.redpacket_model_id');
-        $result = RedpacketModel::where('redpacket_model_id', "eq", "$redpacket_model_id")
+        $result = RedpacketModel::where('redpacket_model_id',"$redpacket_model_id")
                 ->update(['is_delete' => 1]);
         if ($result == 0) {
             return $this->error('操作失败');

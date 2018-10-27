@@ -26,7 +26,7 @@ class Login extends Controller {
             $id = $user->id;
             session('username', $username);
             session('id', $id);
-            $this->success('登陆成功', 'index/home');
+            $this->success('登陆成功', 'index/indexPage');
         }
     }
 
